@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<css file='__PUBLIC__/Css/public.css'/>
+</head>
+<body>
+    <table class='table'>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>内容</th>
+            <th>时间</th>
+            <th>管理</th>
+        </tr>
+        <volist id='wish' name='wish'>
+        <tr>
+            <td>{$wish.uid}</td>
+            <td>{$wish.username}</td>
+            <td>{$wish.content|face=###}</td>
+            <td>{$wish.time|date='Y-m-d H:i',###}</td>
+            <td><a href="{:U('del',array('uid'=>$wish['uid']))}"  onclick="return confirm('你确定要删除吗？')">删除</a></td>
+        </tr>
+        </volist>
+        <tr>
+            <td colspan='5' align='center'>{$page}</td>
+        </tr>
+    </table>    
+</body>
+</html>
